@@ -247,9 +247,9 @@ public class Main {
 
 //3.4 Tableaux
 
-    public static void initialisationTableau() {
-        int maxval=Integer.MAX_VALUE;
-        int minval=Integer.MIN_VALUE;
+   public static void initialisationTableau() {
+        int maxval;
+        int minval;
         int[] tableau = new int[20];
         Scanner scanner = new Scanner(System.in);
         for (int i = 0; i < tableau.length; i++) {
@@ -260,11 +260,14 @@ public class Main {
         for (int nombre:tableau) {
             System.out.print(nombre+" ");
         }
+
+        maxval=tableau[0];
+        minval=tableau[0];
         for (int i=0; i<tableau.length;i++) {
-            if (tableau[i]<maxval) {maxval=tableau[i];}
-            if (tableau[i]>minval) {minval=tableau[i];}
+            if (tableau[i]>maxval) {maxval=tableau[i];}
+            if (tableau[i]<minval) {minval=tableau[i];}
         }
-        System.out.println("\nLe minimum est: "+maxval);
-        System.out.println("Le maximum est: "+minval);
+        System.out.println("\nLe minimum est: "+minval);
+        System.out.println("Le maximum est: "+maxval);
     }
 }
